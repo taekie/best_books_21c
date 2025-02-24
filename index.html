@@ -1,10 +1,10 @@
 <div id=main>
 <div id="observablehq-chart-991db9c8"></div>
-<div id="observablehq-selReader-991db9c8"></div>
+  <div id="observablehq-filterInput-544065bc"></div>
 <div id="observablehq-mapstyle-991db9c8"></div>
 </div>
 <style>
-  #observablehq-selReader-991db9c8{
+  #observablehq-filterInput-544065bc{
     display:none;
   }
 </style>
@@ -14,10 +14,9 @@ import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/run
 import define from "https://api.observablehq.com/@taekie/best_books_21c@44.js?v=4";
 new Runtime().module(define, name => {
   if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-991db9c8"));
-    if (name === "selReader") return new Inspector(document.querySelector("#observablehq-selReader-991db9c8"));
-
   if (name === "mapstyle") return new Inspector(document.querySelector("#observablehq-mapstyle-991db9c8"));
-  return ["trigger"].includes(name);
+  if (name === "filterInput") return new Inspector(document.querySelector("#observablehq-filterInput-544065bc"));
+  return ["chartBound","trigger"].includes(name);
 });
 </script>
 <script>
