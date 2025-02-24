@@ -17,5 +17,6 @@ new Runtime().module(define, name => {
     if (name === "selReader") return new Inspector(document.querySelector("#observablehq-selReader-991db9c8"));
 
   if (name === "mapstyle") return new Inspector(document.querySelector("#observablehq-mapstyle-991db9c8"));
+  return ["trigger"].includes(name);
 });
 </script>
