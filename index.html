@@ -1,14 +1,21 @@
 <div id=main>
 <div id="observablehq-chart-991db9c8"></div>
+<div id="observablehq-selReader-991db9c8"></div>
 <div id="observablehq-mapstyle-991db9c8"></div>
 </div>
-
+<style>
+  #observablehq-selReader-991db9c8{
+    display:none;
+  }
+</style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
 import define from "https://api.observablehq.com/@taekie/best_books_21c@44.js?v=4";
 new Runtime().module(define, name => {
   if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-991db9c8"));
+    if (name === "selReader") return new Inspector(document.querySelector("#observablehq-selReader-991db9c8"));
+
   if (name === "mapstyle") return new Inspector(document.querySelector("#observablehq-mapstyle-991db9c8"));
 });
 </script>
