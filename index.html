@@ -20,3 +20,13 @@ new Runtime().module(define, name => {
   return ["trigger"].includes(name);
 });
 </script>
+<script>
+  document.body.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() !== 'path') {
+        const popup = document.getElementById('myPopup');
+        if (popup) {
+            popup.remove();
+        }
+    }
+});
+</script>
