@@ -10,27 +10,18 @@
 <div id=main>
 <div id="observablehq-chart-991db9c8"></div>
   <div id="observablehq-filterInput-544065bc"></div>
+      <div id="observablehq-myStyle-1554c06f"></div>
 <div id="observablehq-mapstyle-991db9c8"></div>
   <div class=desc>
     <a href=https://www.aladin.co.kr/events/wevent.aspx?EventId=279833 target=_blank>알라딘 21세기 최고의 책 : 기억할 책, 함께할 책</a> 기획에서 106인이 10권씩 선정한 806권을 분류별로 시각화했습니다. <a href=https://x.com/taekie target=_blank>@taekie</a>
   </div>
 </div>
 <style>
-      div#main {
-    margin: 50px 20px;
-    display: flex
-;
-    flex-direction: column;
-    justify-content: center;
-}
-      
+   
   #observablehq-filterInput-544065bc{
     display:none;
   }
   
-  .desc{padding:10px;
-    color:#888;
-  }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
 <script type="module">
@@ -40,6 +31,8 @@ new Runtime().module(define, name => {
   if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-991db9c8"));
   if (name === "mapstyle") return new Inspector(document.querySelector("#observablehq-mapstyle-991db9c8"));
   if (name === "filterInput") return new Inspector(document.querySelector("#observablehq-filterInput-544065bc"));
+        if (name === "myStyle") return new Inspector(document.querySelector("#observablehq-myStyle-1554c06f"));
+
   return ["chartBound","trigger"].includes(name);
 });
 </script>
