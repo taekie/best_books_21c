@@ -74,7 +74,7 @@ new Runtime().module(define, name => {
   if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-991db9c8"));
   if (name === "mapstyle") return new Inspector(document.querySelector("#observablehq-mapstyle-991db9c8"));
   if (name === "filterInput") return new Inspector(document.querySelector("#observablehq-filterInput-544065bc"));
-        if (name === "myStyle") return new Inspector(document.querySelector("#observablehq-myStyle-1554c06f"));
+if (name === "myStyle") return new Inspector(document.querySelector("#observablehq-myStyle-1554c06f"));
 
   return ["chartBound","trigger","galabeling","trigger_pick"].includes(name);
 });
@@ -85,6 +85,8 @@ new Runtime().module(define, name => {
         const popup = document.getElementById('myPopup');
         if (popup) {
             popup.remove();
+            const path = window.location.pathname;
+            history.pushState({}, "", `${path}`);
         }
     }
 });
